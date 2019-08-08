@@ -1,6 +1,6 @@
-package com.spring.mssg.chaiservice.web.repository;
+package com.spring.mssg.chaiservice.repository;
 
-import com.spring.mssg.chaiservice.web.domain.Chai;
+import com.spring.mssg.chaiservice.domain.Chai;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
 import java.util.UUID;

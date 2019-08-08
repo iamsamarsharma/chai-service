@@ -1,4 +1,4 @@
-package com.spring.mssg.chaiservice.web.domain;
+package com.spring.mssg.chaiservice.domain;
 
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
@@ -37,5 +37,5 @@ public class Chai {
     private Long upcCode;
     private BigDecimal price;
     private  Integer minOnHand;
-    private Integer quantityToBewq;
+    private Integer quantityToBrew;
 }
