@@ -1,4 +1,4 @@
-package web.domain;
+package com.spring.mssg.chaiservice.web.domain;
 
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
