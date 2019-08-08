@@ -4,6 +4,7 @@ package com.spring.mssg.chaiservice.web.controller;
 import com.spring.mssg.chaiservice.web.model.ChaiDto;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.UUID;
@@ -18,12 +19,12 @@ public class ChaiController {
     }
 
     @PostMapping
-    public ResponseEntity saveChai(@RequestBody ChaiDto chaiDto){
+    public ResponseEntity saveChai(@RequestBody @Validated ChaiDto chaiDto){
         return new ResponseEntity(HttpStatus.CREATED);
     }
 
     @PutMapping("/{chaiId}")
-    public ResponseEntity updateChaiById(@PathVariable("chaiId") UUID chaiId, @RequestBody ChaiDto chaiDto) {
+    public ResponseEntity updateChaiById(@PathVariable("chaiId") UUID chaiId, @ Validated @RequestBody ChaiDto chaiDto) {
         return new ResponseEntity(HttpStatus.NO_CONTENT);
     }
 }
