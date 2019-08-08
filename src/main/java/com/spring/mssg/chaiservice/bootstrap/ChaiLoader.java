@@ -2,14 +2,15 @@ package com.spring.mssg.chaiservice.bootstrap;
 
 import com.spring.mssg.chaiservice.domain.Chai;
 import com.spring.mssg.chaiservice.repository.ChaiRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 
+@Component
 public class ChaiLoader implements CommandLineRunner {
 
-    private  final ChaiRepository chaiRepository;
+    private final ChaiRepository chaiRepository;
 
     public ChaiLoader(ChaiRepository chaiRepository) {
         this.chaiRepository = chaiRepository;
@@ -20,8 +21,8 @@ public class ChaiLoader implements CommandLineRunner {
         loadChaiObject();
     }
 
-    private  void loadChaiObject() {
-        if (chaiRepository.count()==0){
+    private void loadChaiObject() {
+        if (chaiRepository.count() == 0) {
             chaiRepository.save(Chai.builder()
                     .chaiName("Kangra Black Tea")
                     .chaiType("BLACK")
@@ -40,6 +41,8 @@ public class ChaiLoader implements CommandLineRunner {
                     .minOnHand(2300)
                     .build());
         }
-        }
+
+        System.out.println("Boot loading Data.................................." + chaiRepository.count());
     }
 }
+
